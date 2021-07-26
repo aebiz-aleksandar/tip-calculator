@@ -1,0 +1,301 @@
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+    $strong-cyan: hsl(172, 67%, 45%);
+    $white: hsl(0, 0%, 100%);
+    $red: hsl(11, 31%, 59%);
+    $dark-cyan: hsl(183, 100%, 15%);
+    $dark-cyan2: hsl(186, 14%, 43%);
+    $light-cyan: hsl(184, 14%, 56%);
+    $input-color: hsl(189, 41%, 97%);
+    $bcg-color: hsl(185, 41%, 84%);
+
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        font-family: 'Space Mono', monospace;
+        background: $bcg-color;
+    }
+
+    .holder-title {
+        display: block;
+        color: $light-cyan;
+        font-size: 15px;
+    }
+    .form-group {
+        position: relative;
+        .input-icon {
+            position: absolute;
+            top: 20px;
+            left: 15px;
+            font-size: 18px;
+            color: $light-cyan;
+        }
+        .input-value {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            color: $dark-cyan2;
+            background: $input-color;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: right;
+            border: 2px solid transparent;
+            &:focus {
+                border-color: $strong-cyan;
+                outline: none;
+            }
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+            &[type=number] {
+                -moz-appearance: textfield;
+            }
+            &[placeholder] {
+                font-family: 'Space Mono', monospace;
+                font-weight: 700;
+                color: $light-cyan;
+            }
+            &[value] {
+                font-family: 'Space Mono', monospace;
+                font-weight: 700;
+                color: $dark-cyan2 !important;
+            }
+        }
+    }
+
+    .container {
+        height: auto;
+        display: flex;
+        padding: 20px 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        .title {
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 9px;
+            color: $dark-cyan;
+            font-size: 25px;
+        }
+        .calculator {
+            display: flex;
+            flex-direction: column;
+            background: $white;
+            padding: 35px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            border-radius: 30px;
+            width: 375px;
+            .calculator-input {
+                margin-bottom: 30px;
+                .bill {
+                    margin-bottom: 40px;
+                    .bill-title {
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 15px;
+                        .holder-title-error {
+                            color: $red;
+                        }
+                    }
+                    &.input-error {
+                        .form-group {
+                            .input-value {
+                                border-color: $red !important;
+                            }
+                        }
+                    }
+                }
+                .tip {
+                    margin-bottom: 40px;
+                    .tip-title {
+                        margin-bottom: 15px;
+                    }
+                    .tip-items {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        gap: 15px;
+                        .tip-item {
+                            flex: 0 0 47%;
+                            width: 100%;
+                            background: $dark-cyan;
+                            padding: 15px;
+                            color: $white;
+                            font-size: 20px;
+                            font-weight: bold;
+                            text-align: center;
+                            border-radius: 6px;
+                            cursor: pointer;
+                            transition: all 0.3s ease-in-out;
+                            &:hover {
+                                color: $dark-cyan;
+                                background: $bcg-color;
+                            }
+                            &.tip-item-custom {
+                                background: $input-color;
+                                border: none;
+                                outline: none;
+                                font-family: 'Space Mono', monospace;
+                                color: $dark-cyan;
+                                box-shadow: none;
+                                text-align: right;
+                                border: 2px solid transparent;
+                                &:focus {
+                                    border-color: $strong-cyan;
+                                    outline: none;
+                                }
+                                &::-webkit-outer-spin-button,
+                                &::-webkit-inner-spin-button {
+                                    -webkit-appearance: none;
+                                    margin: 0;
+                                }
+                                &[type=number] {
+                                    -moz-appearance: textfield;
+                                }
+                            }
+                            &.active {
+                                background: $strong-cyan;
+                                color: $dark-cyan;
+                            }
+                        }
+                    }
+                }
+                .num-people {
+                    .num-people-title {
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 15px;
+                        .holder-title-error {
+                            color: $red;
+                        }
+                    }
+                    &.input-error {
+                        .form-group {
+                            .input-value {
+                                border-color: $red !important;
+                            }
+                        }
+                    }
+                }
+            }
+            .calculator-result {
+                background: $dark-cyan;
+                padding: 45px 20px 25px;
+                border-radius: 10px;
+                .amount {
+                    margin-bottom: 30px;
+                }
+                .total {
+                    margin-bottom: 35px;
+                }
+                .amount, .total {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .content {
+                        h5 {
+                            color: $white;
+                            margin-bottom: 8px;
+                        }
+                        span {
+                            font-size: 15px;
+                            color: $strong-cyan;
+                        }
+                    }
+                    .value {
+                        font-size: 25px;
+                        font-weight: bold;
+                        color: $strong-cyan;
+                    }
+                }
+                .btn-reset {
+                    background: $strong-cyan;
+                    padding: 15px 0;
+                    width: 100%;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    color: $dark-cyan;
+                    border: none;
+                    box-shadow: none;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    transition: all 0.3s ease-in-out;
+                            &:hover {
+                                background: $bcg-color;
+                            }
+                }
+            }
+        }
+        .attribution {
+            a {
+                color: $dark-cyan2;
+            }
+        }
+    }
+
+    @media (min-width: 992px) {
+        .container {
+            height: 100vh;
+            justify-content: center;
+            padding: 0;
+            .calculator {
+                width: 85%;
+                flex-direction: row;
+                padding: 30px;
+                .calculator-input {
+                    flex: 0 0 50%;
+                    padding-right: 40px;
+                    margin-bottom: 0;
+                    .bill {
+                        margin-bottom: 30px;
+                    }
+                    .tip {
+                        margin-bottom: 30px;
+                        .tip-items {
+                            .tip-item {
+                                flex: 0 0 30%;
+                            }
+                        }
+                    }
+                }
+                .calculator-result {
+                    padding: 60px 40px 40px;
+                    flex: 0 0 50%;
+                    .amount {
+                        margin-bottom: 60px;
+                    }
+                    .total {
+                        margin-bottom: 90px;
+                    }
+                    .amount, .total {
+                        .content {
+                            h5 {
+                                font-size: 20px;
+                            }
+                        }
+                        .value {
+                            font-size: 40px;
+                        }
+                    }
+                    .btn-reset {
+                        font-size: 22px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .container {
+            .calculator {
+                width: 65%;
+            }
+        }
+    }

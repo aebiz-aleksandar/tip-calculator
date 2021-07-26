@@ -1,0 +1,86 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Fontawesome.css -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+        <!-- Style.css -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+        <title>Frontend Mentor | Tip calculator app</title>
+    </head>
+    <body>
+
+        <!-- Container -->
+        <div class="container">
+            <h1 class="title">Spli<br>tter</h1>
+            <!-- Calculator -->
+            <div class="calculator">
+                <!-- Calculator Input -->
+                <div class="calculator-input">
+                    <div class="bill">
+                        <div class="bill-title">
+                            <h4 class="bill-title holder-title">Bill</h4>
+                        </div>
+                        <div class="form-group">
+                            <i class="fas fa-dollar-sign input-icon"></i>
+                            <input type="number" id="bill-input" class="input-value" placeholder="0">
+                        </div>
+                    </div>
+                    <div class="tip">
+                        <h4 class="tip-title holder-title">Select Tip %</h4>
+                        <div class="tip-items">
+                            <div class="tip-item">5%</div>
+                            <div class="tip-item">10%</div>
+                            <div class="tip-item">15%</div>
+                            <div class="tip-item">25%</div>
+                            <div class="tip-item">50%</div>
+                            <input type="number" class="tip-item tip-item-custom" placeholder="Custom">
+                        </div>
+                    </div>
+                    <div class="num-people">
+                        <div class="num-people-title">
+                            <h4 class="num-title holder-title">Number of People</h4>
+                        </div>
+                        <div class="form-group">
+                            <i class="fas fa-user input-icon"></i>
+                            <input type="text" id="people-input" class="input-value" placeholder="0">
+                        </div>
+                    </div>
+                </div>
+                <!-- Calculator Input END -->
+                <!-- Calculator Result -->
+                <div class="calculator-result">
+                    <div class="amount">
+                        <div class="content">
+                            <h5>Tip Amount</h5>
+                            <span>/ person</span>
+                        </div>
+                        <div id="amount-value" class="value">$0.00</div>
+                    </div>
+                    <div class="total">
+                        <div class="content">
+                            <h5>Total</h5>
+                            <span>/ person</span>
+                        </div>
+                        <div id="total-value" class="value">$0.00</div>
+                    </div>
+                    <button class="btn-reset">Reset</button>
+                </div>
+                <!-- Calculator Result END -->
+            </div>
+            <!-- Calculator END -->
+            <div class="attribution">
+                Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+                Coded by <a href="#">Aleksandar</a>.
+            </div>
+        </div>
+        <!-- Container END -->
+        
+        <!-- Main.js -->
+        <script src="js/main.js"></script>
+    </body>
+    </html>
